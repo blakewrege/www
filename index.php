@@ -46,9 +46,7 @@ Please include in your web pages (at least the first) the <b><i>'Powered by gigg
         });
     </script>
 </head>
-<body>
 <div id="text-file-container"></div>
-</body>
 
 
 
@@ -125,6 +123,7 @@ function LoadFile() {
 <iframe src="http://www.w3schools.com">
   <p>Your browser does not support iframes.</p>
 </iframe>
+<br>
 
 <img src="http://t4ls.duckdns.org:8090/frame.html?src=1&mode=0&width=320&height=240" onError="this.onerror=null;this.src='image.png';" />
 <img src="webcam.jpg">
