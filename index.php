@@ -1,10 +1,17 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"><HTML><HEAD>
+<!DOCTYPE html>
 <HTML>
 <HEAD>
 <META http-equiv="Content-Type" content="text/html; charset=iso 8859-1">
 <TITLE>server webcam</TITLE>
 <STYLE type="text/css">
 <!--
+iframe:focus { 
+    outline: none;
+}
+
+iframe[seamless] { 
+    display: block;
+}
 BODY {
 	FONT-SIZE: small; COLOR: #000000; FONT-FAMILY: "trebuchet ms", Verdana, Arial, Helvetica, sans-serif; BACKGROUND-COLOR: #FFFFFF
 }
