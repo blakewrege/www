@@ -122,7 +122,7 @@ function LoadFile() {
 <li><a href="http://t4ls.duckdns.org:8080/">To Do List</a></li>
 <li><a href="https://yakko.cs.wmich.edu/~gigglesbw4/stuff">Stuff</a></li>
 <br><br><br>
-<img src="http://t4ls.duckdns.org:8090/frame.html?src=1&mode=0&width=320&height=240" height="480" width="704" onError="this.onerror=null;this.src='image.png';" />
+<img src="http://t4ls.duckdns.org:8090/frame.html?src=1&mode=0&width=320&height=240" onError="this.onerror=null;this.src='image.png';" />
 <img src="webcam.jpg">
 <hr>
 </P>
