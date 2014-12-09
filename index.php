@@ -121,7 +121,7 @@ function LoadFile() {
 <li><a href="http://t4ls.duckdns.org:8080/">To Do List</a></li>
 <li><a href="https://yakko.cs.wmich.edu/~gigglesbw4/stuff">Stuff</a></li>
 <br><br><br>
-<iframe src="http://t4ls.duckdns.org:8090/frame.html?src=1&mode=0&width=320&height=240" scrolling=yes>
+<iframe src="http://t4ls.duckdns.org:8090/mobile.html" scrolling=yes>
 </iframe>
 <br>
 
