@@ -81,7 +81,7 @@ def listen():
                     privmsg("%s: hi" % sender)
         	if '!write' in line:
             	    wstr = data.split("!write",1)
-            	    text_file = open("file.txt", "w")
+            	    text_file = open("read.txt", "w")
             	    text_file.write(wstr[1])
             	    privmsg("message set")
            	    text_file.close()
