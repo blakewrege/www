@@ -41,7 +41,7 @@ Please include in your web pages (at least the first) the <b><i>'Powered by gigg
     <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
     <script>
         $(function() {
-            $.get('read.txt', function(data) {
+            $.get('/stuff/read.txt', function(data) {
                 $('#text-file-container').html(data);
             });
         });
@@ -55,8 +55,8 @@ Please include in your web pages (at least the first) the <b><i>'Powered by gigg
 
 
 <?php
-$myfile = fopen("read.txt", "r") or die("Unable to open file!");
-$test = fread($myfile,filesize("read.txt"));
+$myfile = fopen("/stuff/read.txt", "r") or die("Unable to open file!");
+$test = fread($myfile,filesize("/stuff/read.txt"));
 fclose($myfile);
 ?>
 <table frame="box">
@@ -112,7 +112,7 @@ function LoadFile() {
 }
 </script>
 
-<iframe src="read.txt" width="500" height="25"></iframe>
+<iframe src="/stuff/read.txt" width="500" height="25"></iframe>
 
 
 
