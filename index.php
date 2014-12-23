@@ -1,2 +1,2 @@
 work in progress
-https://yakko.cs.wmich.edu/~gigglesbw4/oldindex.php
+<a href="http://ccowmu.org/~alex/door.php">oldpage</a>
