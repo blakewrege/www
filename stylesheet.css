@@ -45,7 +45,7 @@ tr:nth-child(2n), .form_row {
 }
 
 .container, .box {
-	margin: 2px;
+	margin: 0px;
 }
 
 .box {
