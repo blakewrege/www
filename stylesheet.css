@@ -3,12 +3,7 @@ body {
     background-position: 0px -200px;
     background-repeat: no-repeat;
 }
-.gradient {
-  background-image:
-    linear-gradient(
-      red, #f06d06
-    );
-}
+
 * {
 	font-family: Georgia;
 }
@@ -29,7 +24,7 @@ tr, .box {
 }
 
 tr {
-	padding: 4px;
+	padding: 1px;
 
 	border-left: black solid 1px;
 	border-top: black solid 1px;
