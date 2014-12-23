@@ -1,6 +1,6 @@
 body {
     background-image: url("funnyduck.jpg");
-    background-position: -20px 10px;
+    background-position: 10px -20px;
     background-repeat: no-repeat;
 }
 .gradient {
