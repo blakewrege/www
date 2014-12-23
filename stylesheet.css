@@ -1,6 +1,12 @@
 body {
     background-color: lightblue;
 }
+.gradient {
+  background-image:
+    linear-gradient(
+      red, #f06d06
+    );
+}
 * {
 	font-family: Georgia;
 }
