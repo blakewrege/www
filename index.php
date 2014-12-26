@@ -1,4 +1,5 @@
 <head>
+<TITLE>Uglyduck Webserver</TITLE>
 <link rel="stylesheet" type="text/css" href="stylesheet.css">
 </head>
 <div id="header">
