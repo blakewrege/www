@@ -6,12 +6,13 @@
 </div>
 
 <div class="box" id="menu">
-	        	<span class="menu_item" id="menu_login_user"><a href="oldindex.php">Old Webcam Page</a></span>
-	        	<span class="menu_item" id="menu_login_user"><a href="ccowmu/../..">Ccowmu Homepage</a></span>
-	        	<span class="menu_item" id="menu_login_user"><a href="http://t4ls.duckdns.org:8080/todoapp/html/">To Do App</a></span>
+	        	<span class="menu_item" id="menu1"><a href="oldindex.php">Old Webcam Page</a></span>
+	        	<span class="menu_item" id="menu2"><a href="ccowmu/../..">Ccowmu Homepage</a></span>
+	        	<span class="menu_item" id="menu3"><a href="http://t4ls.duckdns.org:8080/todoapp/html/">To Do App</a></span>
+	        	<span class="menu_item" id="menu4"><a href="testing/">Testing</a></span>
+	        	<span class="menu_item" id="menu5"><a href="Blake.php">About</a></span>
 	        </div>
-<br><br><br><br><br><br>
-<h1>work in progress</h1>
+<h2>work in progress</h2>
 
 
 

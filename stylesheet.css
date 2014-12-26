@@ -8,8 +8,12 @@ body {
 * {
 	font-family: Georgia;
 }
-h1{
+h2{
 	color: white;
+	margin-top: 100px;
+	margin-left: 50px;
+	font-size: 30px;
+
 }
 
 p.ex {
@@ -44,9 +48,6 @@ tr:nth-child(2n), .form_row {
 	padding: 2px;
 }
 
-#date {
-	float: right;
-}
 
 .container, .box {
 	margin: 0px;
@@ -62,7 +63,7 @@ tr:nth-child(2n), .form_row {
 }
 
 .menu_item {
-	margin-right: 8px;
+	margin-right: 12px;
 }
 
 .form_row {
