@@ -55,15 +55,13 @@ tr:nth-child(2n), .form_row {
 
 .box {
 	background-color: Orange;
+	text-align:center;
 }
 
-.task {
-	padding-left: 4px;
-	padding-right: 4px;
-}
 
 .menu_item {
-	margin-right: 12px;
+	margin-right: 25px;
+	text-align:center;
 }
 
 .form_row {
