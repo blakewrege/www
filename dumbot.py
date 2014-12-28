@@ -81,20 +81,38 @@ def listen():
                     privmsg("%s: hi" % sender)
         	if '!write' in line:
             	    wstr = data.split("!write",1)
-		    num_lines = sum(1 for line in open('read.txt')) 
+		    num_lines = sum(1 for line in open('read.txt'))
+		    if num_lines == 0:
+			text_file = open("read.txt", "a")
+			text_file.write("\n")
+			text_file.close()
+			num_lines = num_lines+1
             	    text_file = open("read.txt", "a")
-            	    text_file.write(wstr[1])
-            	    privmsg( num_lines)
+		    if wstr[1].strip() == "":
+			privmsg("empty string")
+		    if num_lines > 8:
+		        privmsg("too many items")
+		    else:		
+            	    	text_file.write(wstr[1])
+            	    	privmsg("message set")
            	    text_file.close()
 		if '!remove' in line:
 		    wstr = data.split("!remove",1)
+		    count = 0
+		    num_lines2 = sum(1 for line in open('read.txt'))
 		    f = open("read.txt","r")
 		    lines = f.readlines()
 		    f.close()
-		    f = open("read.txt","w")
-		    for line in lines:
-		      if line!="nickname_to_delete"+"\n":
-		        f.write(line)
+		    if int(wstr[1]) > 0 and int(wstr[1]) < num_lines2:
+		    	f = open("read.txt","w")
+		    	for line in lines:
+                          if count != int(wstr[1]):
+		      	    f.write(line)
+			  count = count + 1
+			privmsg("message removed")	
+		    else:
+			privmsg("does not exist")
+		    f.close()
 
 
 if __name__ == "__main__":
