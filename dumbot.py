@@ -81,10 +81,20 @@ def listen():
                     privmsg("%s: hi" % sender)
         	if '!write' in line:
             	    wstr = data.split("!write",1)
-            	    text_file = open("read.txt", "w")
+		    num_lines = sum(1 for line in open('read.txt')) 
+            	    text_file = open("read.txt", "a")
             	    text_file.write(wstr[1])
-            	    privmsg("message set")
+            	    privmsg( num_lines)
            	    text_file.close()
+		if '!remove' in line:
+		    wstr = data.split("!remove",1)
+		    f = open("read.txt","r")
+		    lines = f.readlines()
+		    f.close()
+		    f = open("read.txt","w")
+		    for line in lines:
+		      if line!="nickname_to_delete"+"\n":
+		        f.write(line)
 
 
 if __name__ == "__main__":
