@@ -10,7 +10,7 @@ while(!feof($myfile)) {
 //   echo "is null";
 //   }else{
    echo "<tr><td>".$count.". ".fgets($myfile) . "</td></tr>";
-//   $count = $count + 1;
+   $count = $count + 1;
 //  }
 }
 $test = fread($myfile,filesize("read.txt"));
