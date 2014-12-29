@@ -92,7 +92,7 @@ def listen():
 			privmsg("empty string")
 		    if num_lines > 8:
 		        privmsg("too many items")
-		    else:		
+		    else:
             	    	text_file.write(wstr[1])
             	    	privmsg("message set")
            	    text_file.close()
@@ -103,15 +103,18 @@ def listen():
 		    f = open("read.txt","r")
 		    lines = f.readlines()
 		    f.close()
-		    if int(wstr[1]) > 0 and int(wstr[1]) < num_lines2:
-		    	f = open("read.txt","w")
-		    	for line in lines:
-                          if count != int(wstr[1]):
-		      	    f.write(line)
-			  count = count + 1
-			privmsg("message removed")	
-		    else:
-			privmsg("does not exist")
+		    try:
+		    	if int(wstr[1]) > 0 and int(wstr[1]) < num_lines2:
+		    		f = open("read.txt","w")
+		    		for line in lines:
+            	              	   if count != int(wstr[1]):
+		    	  	      f.write(line)
+				   count = count + 1
+				privmsg("message removed")	
+		    	else:
+				privmsg("does not exist")
+		    except ValueError:
+				privmsg("Not a number")	
 		    f.close()
 
 
