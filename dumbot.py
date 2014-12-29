@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+#https://yakko.cs.wmich.edu/~gigglesbw4/testing/board.html
 """BOILERBOT.py
 
 This code is intended to be a simple boilerplate
@@ -82,6 +83,8 @@ def listen():
                 if ':hi boilerbot' in line:
                     sender = line.split("!")[0][1:]
                     privmsg("%s: hi" % sender)
+
+					#Adds a message to messageboard
         	if '!write' in line:
             	    wstr = data.split("!write",1)
 		    num_lines = sum(1 for line in open('read.txt'))
@@ -93,12 +96,14 @@ def listen():
             	    text_file = open("read.txt", "a")
 		    if wstr[1].strip() == "":
 			privmsg("empty string")
-		    if num_lines > 8:
+		    elif num_lines > 8:
 		        privmsg("too many items")
 		    else:
             	    	text_file.write(wstr[1])
             	    	privmsg("message set")
            	    text_file.close()
+
+					#removes objects set by messageboard
 		if '!remove' in line:
 		    wstr = data.split("!remove",1)
 		    count = 0
