@@ -15,6 +15,9 @@ https://tools.ietf.org/html/rfc2812i
 """
 
 import socket
+import sys
+reload(sys)
+sys.setdefaultencoding('utf8')
 
 HOST = "localhost"  # must be run from yakko to connect directly
 PORT = 6667
