@@ -73,20 +73,18 @@ def listen():
             if 'PING' == line.split()[0]:
                 pong(line.split()[1])
             if 'PRIVMSG' in line:
-                if '!test' in line:
-		    fo = open("file.txt", "wb")
-		    fo.write( "this is working\n");
-		    fo.close()
+                if '~help' in line:
+		    privmsg("~write (your message) to add | ~remove # to remove ")
                 if 'roll call' in line:
                     privmsg("poo you")
 
-                if ':hi boilerbot' in line:
+                if ':hi dumbbot' in line:
                     sender = line.split("!")[0][1:]
                     privmsg("%s: hi" % sender)
 
 					#Adds a message to messageboard
-        	if '!write' in line:
-            	    wstr = data.split("!write",1)
+        	if '~write' in line:
+            	    wstr = data.split("~write",1)
 		    num_lines = sum(1 for line in open('read.txt'))
 		    if num_lines == 0:
 			text_file = open("read.txt", "a")
@@ -104,8 +102,8 @@ def listen():
            	    text_file.close()
 
 					#removes objects set by messageboard
-		if '!remove' in line:
-		    wstr = data.split("!remove",1)
+		if '~remove' in line:
+		    wstr = data.split("~remove",1)
 		    count = 0
 		    num_lines2 = sum(1 for line in open('read.txt'))
 		    f = open("read.txt","r")
