@@ -17,6 +17,8 @@ https://tools.ietf.org/html/rfc2812i
 
 import socket
 import sys
+import datetime
+import time
 reload(sys)
 sys.setdefaultencoding('utf8')
 
@@ -85,6 +87,8 @@ def listen():
 					#Adds a message to messageboard
         	if '~write' in line:
             	    wstr = data.split("~write",1)
+		    ts = time.time()
+		    st = datetime.datetime.fromtimestamp(ts).strftime('%Y-%m-%d ')
 		    num_lines = sum(1 for line in open('read.txt'))
 		    if num_lines == 0:
 			text_file = open("read.txt", "a")
@@ -97,7 +101,7 @@ def listen():
 		    elif num_lines > 8:
 		        privmsg("too many items")
 		    else:
-            	    	text_file.write(wstr[1])
+            	    	text_file.write(wstr[1].rstrip('\r\n')+"</td><td align=\"right\">"+st.strip()+"\n")
             	    	privmsg("message set")
            	    text_file.close()
 

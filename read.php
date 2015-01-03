@@ -1,5 +1,5 @@
 <style type="text/css">
-table, th, td {
+table, th {
     border: 1px solid black;
     border-collapse: collapse;
 }
@@ -10,10 +10,9 @@ th, td {
 </head>
 
 <body>
-
 <table frame="box" style="width:100%">
   <tr>
-    <th>Messege Board</th>
+ <th colspan="2" style="font-size:23px">Message Board</th> 
   </tr>
 <?php
 $count = 1;
