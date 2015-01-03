@@ -11,7 +11,7 @@ th, td {
 
 <body>
 
-<table frame="box" style="width:50%">
+<table frame="box" style="width:100%">
   <tr>
     <th>Messege Board</th>
   </tr>
