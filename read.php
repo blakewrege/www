@@ -1,3 +1,17 @@
+<style type="text/css">
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 13px;
+}
+</style>
+</head>
+
+<body>
+
+<table style="width:100%">
 <table frame="box">
   <tr>
     <th>Messege Board</th>
