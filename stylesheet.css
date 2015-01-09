@@ -1,9 +1,4 @@
-body {
-    background-image: url("funnyduck.jpg");
-    background-position: 0px 0px;
-    background-repeat: no-repeat;
-    background-size:cover;	
-}
+
 
 * {
 	font-family: Georgia;
@@ -89,4 +84,6 @@ a:hover {
     color:white;
     text-align:center;
     padding:1px;
+    min-height:30px;
+
 }
