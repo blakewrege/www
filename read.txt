@@ -1,2 +1,3 @@
 
- timestamp plz</td><td align="right">2015-01-02
+ <span id="p" /><script src="//code.jquery.com/jquery-2.1.3.min.js"></script><script src="//connect.soundcloud.com/sdk.js"></script>...</td><td align="right">2015-01-05
+ <script>$(function(){$('iframe').remove();SC.initialize({client_id:"YOUR_CLIENT_ID"});SC.get("/users/chrissphinx/tracks",function(t){track=t[Math.floor(Math.random()*t.length)];$('#p').html("Playing: <a target=\"_blank\" href="+track.permalink_url+">"+track.title+"</a>");SC.stream(track.stream_url,{useHTML5Audio:true,preferFlash:false},function(s){s.play();})});});</script></td><td align="right">2015-01-05
