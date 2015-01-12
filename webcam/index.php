@@ -1,6 +1,5 @@
 <html>
 <style>
-
 </style>
 
 
@@ -22,4 +21,13 @@
                         <span class="menu_item" id="menu6"><a href="../blake.php">About</a></span>
                 </div>
 <h2 style="color:black;">New Webcam page</h2>
+
+<img src="../webcam.jpg">
+
+
+
+
+
+
+
 </body></html>
