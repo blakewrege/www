@@ -16,7 +16,7 @@
                         <span class="menu_item" id="menu1"><a href="../oldindex.php">Old Webcam Page</a></span>
                         <span class="menu_item" id="menu2"><a href="../webcam">New Webcam Page</a></span>
                         <span class="menu_item" id="menu3"><a href="https://yakko.cs.wmich.edu/">Ccowmu Homepage</a></span>
-                        <span class="menu_item" id="menu4"><a href="http://t4ls.duckdns.org:8080/todoapp/html/">To Do App</a></span>
+                        <span class="menu_item" id="menu4"><a href="todoapp/html/">To Do App</a></span>
                         <span class="menu_item" id="menu5"><a href="../testing/">Testing</a></span>
                         <span class="menu_item" id="menu6"><a href="../blake.php">About</a></span>
                 </div>
