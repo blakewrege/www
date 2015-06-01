@@ -1,0 +1,56 @@
+% This is the TEST PLAN for TransData1 file.
+% TEST:  S and A transactions, no I or D transactions.
+%
+% Any line beginning with a % is a comment.
+% (UserApp's big switch statement just "does nothing"
+%    when transCode (1st char of line) is a '%'.
+%-------------------------------------------------------
+% SUCCESSFUL SEARCHES
+%
+% TEST: 1st & last countries in input file
+S MEX
+S ATA
+% TEST: root (OK above)
+% TEST: leaves:  leftmost (OK), rightmost, deepest,
+%		 closest to root (OK)
+S ZWE
+S IND
+% TEST: interior nodes: 2 chil, only L ch, only R ch
+S POL
+S LBN
+S VEN
+% TEST: paths:  all L's (OK), all R's (OK), RLRL, LRLR
+S OMN
+S GBR
+%-------------------------------------------------------
+% UNSUCCESSFUL SEARCHES
+%
+% TEST: down to a leaf
+S AAA
+S AXE
+S RUT
+% TEST: off a non-leaf, but diff path-lengths
+S GOD
+S GAP
+S PAN
+S PUT
+S MIX
+S MAX
+% TEST: small letters & digits
+%	(Are mex & digits < A or > Z?)
+%	(NOTE: do NOT toUpper these to make them match)
+S mex
+S ata
+S rus
+S 123
+% TEST: special characters
+S ###
+S :::
+S [[[
+S {{{
+%-------------------------------------------------------
+% ALL
+%
+% TEST: showAll in Alphabetical order using
+%		inOrder Traversal (DO NO SORT !!!)
+A

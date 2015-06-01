@@ -1,0 +1,27 @@
+Asgn 6 demo specs
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+DO THESE OPERATIONS IN THIS ORDER
+   - delete Log file
+   - run UserApp program
+   - run PrettyPrint program
+   - print out Log file
+   - print out your program files
+
+PACKET TO HAND IN - IN THIS ORDER
+   - cover page
+   - Log file printout
+          FIXED-WIDTH FONT & smaller font & landscape orientation
+           to save paper and avoid wrap-around for the big
+           PrettyPrint matrix part)
+   - PrettyPrint program file
+   - UserApp program file
+   - MapData class file
+   - Route class file
+   - any other code files
+
+
+
+
+

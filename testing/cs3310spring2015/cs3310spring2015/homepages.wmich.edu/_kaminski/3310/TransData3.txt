@@ -1,0 +1,116 @@
+% This is the TEST PLAN for TransData3 file.
+% TEST:  I or D transactions, and then S and A to see if
+%	the inserts and tombstoning worked.
+% NOTE: S and D and A transactions check for tombstones.
+%	If found, treat them as if they are GONE. . .
+%	(so give an "unsuccessful S/D" message and
+%	do NOT display them for A transactions.
+% NOTE: Testing Deletes. . .
+%	Test file #1 already tested the search aspects.
+%	Here we test the tombstoning aspects.
+%
+% IMPORTANT NOTES
+% NOTE: A1 MUST using "static deleting" (tombstoning)
+%	and NOT use "dynamic deleting".
+% NOTE: A1 reports # nodes visited - this DOES INCLUDE
+%	tombstoned nodes.
+%-------------------------------------------------------
+% SUCCESSFUL DELETES
+%
+% TEST: leaves
+D KEN
+D OMN
+% TEST: interior nodes - 2 children
+D SOM
+D JPN
+D YEM
+% TEST: nodes below the deleted ones (& with 1 child)
+D FRA
+D RUS
+D ZWE
+% TEST: root
+D MEX
+%-------------------------------------------------------
+% UNSUCCESSFUL DELETES
+%
+% TEST: nodes never were in BST
+D WMU
+D ABC
+D ZZZ
+% TEST: nodes were deleted from BST above.
+%	So they can NOT be found to delete again!
+D MEX
+D KEN
+D FRA
+%-------------------------------------------------------
+% SEARCH
+%
+% TEST: tombstoned nodes - all UNSUCCESSFUL
+S KEN
+S OMN
+S SOM
+S JPN
+S YEM
+S FRA
+S RUS
+S ZWE
+S MEX
+% TEST: good nodes below tombstones - SUCCESSFUL
+S DEU
+S IND
+S XVI
+%-------------------------------------------------------
+% SUCCESSFUL INSERTS
+%
+% TEST: leftmost and rightmost
+I ABC 40
+I ZYX 41
+% TEST: lowest level - makes tree grow taller
+I RAN 42
+I RUT 43
+I ICE 50
+I IOU 51
+% TEST: hang new node on a tombstoned node
+I KAP 55
+I KUP 56
+% TEST: hang new node on a newly inserted node
+I KAA 57
+I KZZ 58
+I IAA 59
+I IZZ 60
+%-------------------------------------------------------
+% UNSUCCESSFUL INSERTS
+%
+% NOTE: Won't be UNsuccessful inserts since A1 does NO:
+%   - duplicate-checking, and
+%   - run-out-of-space checking, either because A1 uses
+%	- a dynamic array (ArrayList) OR
+%	- MAX_N = 100 so it's "plenty big"
+%-------------------------------------------------------
+% SEARCH
+%
+S ABC
+S ZYX
+S RAN
+S RUT
+S ICE
+S IOU
+S KAP
+S KUP
+S KAA
+S KZZ
+S IAA
+S IZZ
+%-------------------------------------------------------
+% SUCCESSFUL DELETES of INSERTED nodes
+%
+D ABC
+D IZZ
+D RUT
+%-------------------------------------------------------
+% ALL
+%
+% TEST: A type transaction AGAIN since we've inserted
+%	and "deleted" (tombstoned) nodes.
+% 	NOTE: do NOT display tombstoned nodes.
+A

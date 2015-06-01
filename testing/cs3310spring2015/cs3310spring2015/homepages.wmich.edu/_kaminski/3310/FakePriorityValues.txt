@@ -1,0 +1,10 @@
+The FakeInputStream file is the same as InputStream file except that a EXTRA field has
+been added to each record, a FakePriorityValue.  This file can be used to MANUALLY work
+with heaps on paper since the numbers are much smaller than the actual population values
+(which must be used in the PROGRAM for the actual PriorityValues.
+
+The FakePriorityValues are 1-72 which correspond to the smallest-to-largest populations.
+So, since the magnitude of the populations don't matter, just their relative size, the
+1-72 values for the FakePriorityValues will give the same heap results.
+
+But you MUST use the REAL InputStream.csv file for the input to your PROGRAM.

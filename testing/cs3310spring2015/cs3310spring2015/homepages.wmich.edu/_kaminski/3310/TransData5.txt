@@ -1,0 +1,35 @@
+% TransData5.txt file for Asgn 2 - just test AC and SC transactions
+%
+% This is a revision of TransData1 from Asgn 1
+%	but now the tranCodes are 2-char, not 1-char.
+% You already tested CodeIndex program code in A1, but...
+%	changes were made in A2 in terms of program-structure and
+%	calling structure.  So test these again.
+AC
+SC MEX
+SC ATA
+SC ZWE
+SC IND
+SC POL
+SC LBN
+SC VEN
+SC OMN
+SC GBR
+SC AAA
+SC AXE
+SC RUT
+SC GOD
+SC GAP
+SC PAN
+SC PUT
+SC MIX
+SC MAX
+SC mex
+SC ata
+SC rus
+SC 123
+SC ###
+SC :::
+SC [[[
+SC {{{
+AC

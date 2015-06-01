@@ -1,0 +1,57 @@
+int SIZE_OF_A_CHAR = 1;            // assume 1-byte/char ASCII
+
+int SIZE_OF_HEADER_REC = 3 * SIZE_OF_A_CHAR;
+
+int SIZE_OF_CODE = 3  * SIZE_OF_A_CHAR;
+int SIZE_OF_ID   = 3  * SIZE_OF_A_CHAR;
+int SIZE_OF_NAME = 18 * SIZE_OF_A_CHAR;
+int SIZE_OF_CONT = 13 * SIZE_OF_A_CHAR;
+int SIZE_OF_AREA = 8  * SIZE_OF_A_CHAR;
+int SIZE_OF_POP  = 10 * SIZE_OF_A_CHAR;
+int SIZE_OF_LIFE = 4  * SIZE_OF_A_CHAR;
+
+int SIZE_OF_CR_LF = 2  * SIZE_OF_A_CHAR;
+
+int SIZE_OF_DATA_REC =  SIZE_OF_CODE + SIZE_OF_ID
+    + SIZE_OF_NAME + SIZE_OF_CONT  + SIZE_OF_AREA
+    + SIZE_OF_POP + SIZE_OF_LIFE + SIZE_OF_CR_LF;
+
+
+// These constants should be at the top of DataStorage class.
+//
+// If you're writing out in Unicode (2 bytes per char) fix that
+//        above.
+//
+// I'm assuming char arrays rather than strings, so that may
+//        need fixing if your write method from the Java/C#
+//        library includes a preceeding length count field (or
+//        a null-terminator byte for C++)?
+//
+// HOW CAN YOU KNOW WHAT A RECORD REALLY WRITES LIKE?
+// - Use a small 2-record RawData test file.
+// - Do NOT do random access (i.e., do NOT do byteOffset
+//        calculation nor the seek).  Just write out the 2
+//        records using plain sequential access (i.e., like you
+//        do for the Log file) using the WRITE method that
+//        you're using for CountryData file (where the class has
+//        to have SEEK available to be able to do random access
+//        needed for A2).
+// - Make sure the file gets closed (in dataStorage.finishUp).
+// - Look at the CountryData file using a text editor and
+//        see what's there.  (You won't see the CR & LF explicitly,
+//        but you'll know if they're there or not using NotePad).
+// - We'll also talk about using a HexEditor utility program to
+//        REALLY see EXACTLY what is in the file, byte-wise.
+//        If you need to do this before Tuesday, see HexEditor under
+//        "Other Issues" on the course website.
+
+// When you do add the random access part,
+//        byteOffset = SIZE_OF_HEADER_REC
+//                         + ((rrn - 1) * SIZE_OF_DATA_REC);
+
+// BUT if your seek needs a LONG for byteOffset,
+//	then you'll need to some field on the right as LONG
+//	(like... cast rrn to be long)
+//	so that you get LONG arithmetic rather than INT arithmetic.
+//	(That is, an rrn of 999999999 should result in a positive
+//	really big value rather than a negative number for byteOffset).

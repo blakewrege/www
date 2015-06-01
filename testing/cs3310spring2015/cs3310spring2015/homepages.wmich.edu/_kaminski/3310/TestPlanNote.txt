@@ -1,0 +1,9 @@
+TransData?.txt files contain the test data embedded 
+amongst notes regarding what case they are testing.
+
+All NON-data start with % in the first column.
+
+So your big SWITCH statement in userApp should
+watch for the '%' case and just do nothing with
+those lines, as oppsed to 'I', 'D', 'S', 'A' cases
+which call appropriate methods in CodeIndex class.

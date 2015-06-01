@@ -1,0 +1,41 @@
+How many objects are declared for a type of class:
+
+- in Setup
+    RawData - only 1 since there's only 1 RawData file
+    UiOut - only 1 since there's only 1 Log file
+    DataStorage - only 1 since there's only 1 CountryData file
+    CodeIndex - only 1 since there's only 1 index structure
+  other
+    BstNode - as many as needed since there are many in memory
+	at once during the run of the program
+	[hidden in CodeIndex]
+    DataRecord (optional) - only 1 which is re-used
+	since there is never more than 1 record in memory at once
+	[hidden in DataStorage]
+    BackupFile (optional) - only 1 since there's only 1 IndexBackup file
+	[hidden in CodeIndex]
+
+- in UserApp
+    UiIn - only 1 since there's only 1 TransData file
+		use in a single run of the UserApp program
+    UiOut - only 1 since there's only 1 Log file
+    DataStorage - only 1 since there's only 1 CountryData file
+    CodeIndex - only 1 since there's only 1 index structure
+  other
+    BstNode - as many as needed since there are many in memory
+	at once during the run of the program
+    DataRecord (optional) - only 1 which is re-used
+	since there is never more than 1 record in memory at once
+    BackupFile (optional) - only 1 since there's only 1 IndexBackup file
+	[hidden in CodeIndex]
+
+- in PrettyPrint
+    no objects since this is just a quickly-written (CS1110-level)
+	utility program
+
+- in TestDriver
+    no objects since this is just a short utility driver program
+
+
+
+

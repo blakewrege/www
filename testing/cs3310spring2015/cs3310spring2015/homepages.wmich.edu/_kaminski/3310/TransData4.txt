@@ -1,0 +1,34 @@
+% TransData4.txt file for Asgn 2 - just test AI and SI transactions
+% NOTE:  New 2-char tranCodes
+%
+% show all data the file in physical order ("empty" locations NOT shown)
+%	so you can use it to check whether the SI's below work right)
+AI
+% SUCCESSFUL:  first & last records in RawData file
+SI 39
+SI 12
+% SUCCESSFUL:  first & last (39 above) records in CoutryData file
+SI 3
+% SUCCESSFUL:  middle records, 31 between 2 good recs, 17 between 2 empty's
+SI 31
+SI 17
+% UNSUCCESSFUL:  within good record range
+SI 5
+SI 38
+SI 11
+% UNSUCCESSFUL:  edge cases
+SI 1
+SI 40
+% UNSUCCESSFUL:  odd cases
+SI 99999
+SI 0
+SI 999999999
+% SUCCESSFUL:  after UNSUCCESSFUL searches, do successful ones work
+SI 19
+SI 20
+SI 20
+SI 6
+% SUCCESSFUL:  move file position pointer to near the END
+SI 36
+% See what printout of whole file looks like AFTER doing a SEARCH
+AI
