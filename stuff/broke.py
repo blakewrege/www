@@ -1,0 +1,159 @@
+#broke.py
+import urllib
+from HTMLParser import HTMLParser
+from htmlentitydefs import name2codepoint
+import sys
+import socket
+import string
+import array
+# file where it will be stored to
+rawSrc="rawSrc.txt"
+linkSrc="lnksSrc.txt"
+HOST ="dot" #yakko.cs.wmich.edu
+PORT = 6667 #6379
+NICK = "broke2"
+IDENT = 'broke2'
+REALNAME = 'broke2'
+readbuffer = ""
+channel = "#programming"
+channel2 = "#asdf"
+channel3 = "#gamer "
+channel4 = "#geekboy"
+readbuffer = ''
+
+s = socket.socket( )
+print "Connecting to server: "+HOST
+
+s.connect((HOST, PORT))
+s.send("NICK %s\r\n" % NICK)
+s.send("USER %s %s bla :%s\r\n" % (IDENT, HOST, REALNAME))
+s.send("JOIN #programming\r\n")
+s.send("JOIN #asdf\r\n")
+s.send("JOIN # \r\n")
+
+s.send("JOIN #test2\r\n")
+s.send("PRIVMSG %s :csquared is a noob\r\n" % channel)
+s.send("PRIVMSG %s :csquared is a noob\r\n" % channel2)
+
+print "Server Running"
+
+def sendmessage(message):
+	s.send('PRIVMSG ' +channel+' :'+message+'\r\n')
+def parsemsg(s):
+    """Breaks a message from an IRC server into its prefix, command, and arguments.
+    """
+    prefix = ''
+    trailing = []
+    if not s:
+       raise IRCBadMessage("Empty line.")
+    if s[0] == ':':
+        prefix, s = s[1:].split(' ', 1)
+    if s.find(' :') != -1:
+        s, trailing = s.split(' :', 1)
+        args = s.split()
+        args.append(trailing)
+    else:
+        args = s.split()
+    command = args.pop(0)
+    return prefix, command, args
+
+class MyHTMLParser(HTMLParser):
+    def handle_starttag(self, tag, attrs):
+        print "Start tag:", tag
+        for attr in attrs:
+            print "     attr:", attr
+    def handle_endtag(self, tag):
+        print "End tag  :", tag
+    def handle_data(self, data):
+        print "Data     :", data
+    def handle_comment(self, data):
+        print "Comment  :", data
+    def handle_entityref(self, name):
+        c = unichr(name2codepoint[name])
+        print "Named ent:", c
+    def handle_charref(self, name):
+        if name.startswith('x'):
+            c = unichr(int(name[1:], 16))
+        else:
+            c = unichr(int(name))
+        print "Num ent  :", c
+    def handle_decl(self, data):
+        print "Decl     :", data
+
+while 1:
+	data = s.recv(100)
+        alist = parsemsg(data)
+        blist = alist[-1]
+	print blist
+        if data.find("write") != -1:
+            wstr = data.split("write",1)
+            text_file = open("read.txt", "w")
+            text_file.write(wstr[1])
+            sendmessage("")
+            text_file.close()
+        if data.find('PING') != -1:
+            s.send('PONG' + data.split()[1]+'\r\n')
+        if data.find("~test") != -1:
+		  sendmessage("fix me, wth is going on")
+        if data.find("help") != -1:
+            sendmessage("write = writes text to file, read = displays text in file, steam = reads current players online ")
+        if data.find("pos") != -1:
+            text_file = open("read.txt", "w")
+            text_file.write("fixed")
+            sendmessage(pow)
+            text_file.close()
+    	if data.find("read") != -1:
+            file = open('read.txt', 'r+')
+            s.send("PRIVMSG #programming  : "+file.read()+'\r\n')
+            file.close
+        if data.find("steam") != -1:
+            def dlSrc():
+                wRawSrc=open(rawSrc,"w")
+                locPage="http://steamcommunity.com/groups/ccowmu"
+                webPage=urllib.urlopen(locPage)
+                wPageSrc=webPage.read()
+                webPage.close()
+                wRawSrc.write(wPageSrc)
+            def cleanFile():
+                rRawSrc=open(rawSrc,"r")
+                wlinkSrc=open(linkSrc,"w")
+                for line in rRawSrc:
+                    if "a href" in line:
+                        wlinkSrc.write(line)
+            dlSrc()
+            cleanFile()
+            parser = MyHTMLParser()
+            file = open('rawSrc.txt', 'r+')
+            store = file.readlines()
+            file.close
+            i = len(store)
+            list1=[]
+            aaa=" "
+            aa=[]
+            i2=0
+            str1=" "
+            for x in xrange(i):
+                str1 = store[x]
+                p = str1.find('playerAvatar online')
+                if p != -1:
+
+                    temp = store[x+1]
+                    print store[x+1]
+                    list1 = str.split(temp,"/")
+                    aa.append(list1[-1])
+                    aaa = aaa+aa[i2]
+                    i2=i2+1
+            bbb = ""
+            ccc = ""
+            aaa = aaa.replace('">',"|")
+            while aaa.find("|") != -1:
+                i3 = aaa.index("|")+1
+                bbb = aaa[0:i3]
+                ccc = ccc+bbb
+                aaa = aaa[i3+2:-1]
+            sendmessage(ccc)
+
+
+
+
+
